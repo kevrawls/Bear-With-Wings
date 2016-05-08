@@ -1,7 +1,17 @@
 //Bear With Wings
 //Author: Kevin Rawls
-//Initial help and some art deign: Garrett Goody
-//Other help: Calvin Cotton
+//Full game available for download at bearwithwings.com
+
+/*Basic outline of what this game does:
+	So the bear(or whatever) starts out in a main hub world and can 
+	then go to smaller hub worlds in which there are 5 doors. For example the first hub world(which
+	you can access through the main hub world) has four multicolored doors that lead to levels. The fifth 
+	door is the door leading to the boss fight. In the main levels there are keys to collect,
+    1 for each level. Once the player has collected all keys, they gain access to the final door and 
+	gain an ability. Once they beat the boss, using the new ability, they gain access to the next world. 
+	The whole game revolves around doors and connecting the levels via doors as well as using new abilities
+	gained from previous worlds to beat new worlds.
+*/
 
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -21,17 +31,6 @@ import javax.swing.JLabel;
 
 import javax.swing.*;
 
-
-	/*Basic outline of what this game does:
-	So the bear(or whatever) starts out in a main hub world and can 
-	then go to smaller hub worlds in which there are 5 doors. For example the first hub world(which
-	you can access through the main hub world) has four multicolored doors that lead to levels. The fifth 
-	door is the door leading to the boss fight. In the main levels there are keys to collect,
-    1 for each level. Once the player has collected all keys, they gain access to the final door and 
-	gain an ability. Once they beat the boss, using the new ability, they gain access to the next world. 
-	The whole game revolves around doors and connecting the levels via doors as well as using new abilities
-	gained from previous worlds to beat new worlds.
-	*/
 
 public class BearWithWings extends JFrame implements Runnable{
 
@@ -91,24 +90,24 @@ public class BearWithWings extends JFrame implements Runnable{
 		private String level = "hub";
 		private String lastDoor = "hubDoor1";
 		private String alertMessage = "";
-		private String keySound = "music/item get.wav";
-		private String coinSound = "music/coin.wav";
-		private String titleScreenMusicURL = "music/cave story.wav";
-		private String wingFlap = "music/wing flap.wav";
-		private String stompSound = "music/stomp.wav";
-		private String hub1URL = "music/mega man 5 stage select.wav";
-		private String redURL = "music/batman.wav";
-		private String blueURL = "music/fantasy zone.wav";
-		private String mainHubURL = "music/mr gimmick.wav";
-		private String greenURL = "music/duck tales.wav";
-		private String bossScream = "music/boss scream.wav";
-		private String bossThemeURL = "music/zelda ganon theme.wav";
-		private String bossBattleURL = "music/zelda ganon battle.wav";
-		private String smilesAndTears = "music/smiles and tears.wav";
-		private String bearYell = "music/zelda menu.wav";
-		private String yellowURL = "music/mega man 2.wav";
-		private String flyURL = "music/slide theme.wav";
-		private String superCrystalGet = "music/dragon coin.wav";
+		private String keySound = "C:/Users/Kevin/Music/item get.wav";
+		private String coinSound = "C:/Users/Kevin/Music/coin.wav";
+		private String titleScreenMusicURL = "C:/Users/Kevin/Music/cave story.wav";
+		private String wingFlap = "C:/Users/Kevin/Music/wing flap.wav";
+		private String stompSound = "C:/Users/Kevin/Music/stomp.wav";
+		private String hub1URL = "C:/Users/Kevin/Music/mega man 5 stage select.wav";
+		private String redURL = "C:/Users/Kevin/Music/batman.wav";
+		private String blueURL = "C:/Users/Kevin/Music/fantasy zone.wav";
+		private String mainHubURL = "C:/Users/Kevin/Music/mr gimmick.wav";
+		private String greenURL = "C:/Users/Kevin/Music/duck tales.wav";
+		private String bossScream = "C:/Users/Kevin/Music/boss scream.wav";
+		private String bossThemeURL = "C:/Users/Kevin/Music/zelda ganon theme.wav";
+		private String bossBattleURL = "C:/Users/Kevin/Music/zelda ganon battle.wav";
+		private String smilesAndTears = "C:/Users/Kevin/Music/smiles and tears.wav";
+		private String bearYell = "C:/Users/Kevin/Music/zelda menu.wav";
+		private String yellowURL = "C:/Users/Kevin/Music/mega man 2.wav";
+		private String flyURL = "C:/Users/Kevin/Music/slide theme.wav";
+		private String superCrystalGet = "C:/Users/Kevin/Music/dragon coin.wav";
 		
 		private Color background = new Color(0, 150, 250);
 		private Color fireball = Color.RED;
@@ -116,48 +115,48 @@ public class BearWithWings extends JFrame implements Runnable{
 		private ImageIcon left;
 		private ImageIcon right;
 		private ImageIcon rightMove;
-		private ImageIcon doorClosed = new ImageIcon("Images/hub door.gif");
+		private ImageIcon doorClosed = new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/hub door.gif");
 		private ImageIcon doorOpened;
-		private ImageIcon smallTree = new ImageIcon("Images/Trees.gif");
-		private ImageIcon bigTree = new ImageIcon("Images/Bigger tree.gif");
-		private ImageIcon enemyIcon1Up = new ImageIcon("Images/Enemy 2.gif");
-      private ImageIcon enemyIcon1Down = new ImageIcon("Images/Enemy 2.1.gif");
-		private ImageIcon enemyIcon2Left = new ImageIcon("Images/enemy 3.gif");
-		private ImageIcon enemyIcon2Right = new ImageIcon("Images/enemy 3.1.gif");
-		private ImageIcon enemyIcon3Right = new ImageIcon("Images/enemy 4.2.gif");
-		private ImageIcon enemyIcon3Left = new ImageIcon("Images/enemy 4.1.gif");
-		private ImageIcon enemyIcon4Right = new ImageIcon("Images/enemy 5.2.gif");
-		private ImageIcon enemyIcon4Left = new ImageIcon("Images/enemy 5.1.gif");
-		private ImageIcon platformIcon = new ImageIcon("Images/grassyplatform1.gif");
-		private ImageIcon orangeKey= new ImageIcon("Images/orange key.gif");
-		private ImageIcon blueKey = new ImageIcon("Images/blue key.gif");
-		private ImageIcon blueDoorIcon = new ImageIcon("Images/blue door.gif");
-		private ImageIcon hub1DoorIcon =  new ImageIcon("Images/hub1 door.gif");
-		private ImageIcon redDoorIcon =  new ImageIcon("Images/red door.gif");
-		private ImageIcon redKey =  new ImageIcon("Images/red key.gif");
-		private ImageIcon greenDoorIcon =  new ImageIcon("Images/green door.gif");
-		private ImageIcon greenKey =  new ImageIcon("Images/green key.gif");
-		private ImageIcon bossDoorIcon =  new ImageIcon("Images/boss door.gif");
-		private ImageIcon boss1LeftIcon =  new ImageIcon("Images/boss1 left.gif");
-		private ImageIcon boss1RightIcon =  new ImageIcon("Images/boss1 right.gif");
-		private ImageIcon yellowDoorIcon =  new ImageIcon("Images/yellow door.gif");
-		private ImageIcon yellowKey =  new ImageIcon("Images/yellow key.gif");
-		private ImageIcon bearRight = new ImageIcon("Images/BEAR2 RIGHT.gif"); 
-      private ImageIcon bearLeft = new ImageIcon("Images/BEAR2 LEFT.gif");
-      private ImageIcon bearJumpUpRight = new ImageIcon("Images/BEAR2 JUMP2 RIGHT.gif"); 
-      private ImageIcon bearJumpUpLeft = new ImageIcon("Images/BEAR2 JUMP2 LEFT.gif");
-      private ImageIcon bearJumpDownRight = new ImageIcon("Images/BEAR2 JUMP1 RIGHT.gif"); 
-      private ImageIcon bearJumpDownLeft = new ImageIcon("Images/BEAR2 JUMP1 LEFT.gif"); 
+		private ImageIcon smallTree = new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/Trees.gif");
+		private ImageIcon bigTree = new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/Bigger tree.gif");
+		private ImageIcon enemyIcon1Up = new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/Enemy 2.gif");
+      private ImageIcon enemyIcon1Down = new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/Enemy 2.1.gif");
+		private ImageIcon enemyIcon2Left = new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/enemy 3.gif");
+		private ImageIcon enemyIcon2Right = new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/enemy 3.1.gif");
+		private ImageIcon enemyIcon3Right = new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/enemy 4.2.gif");
+		private ImageIcon enemyIcon3Left = new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/enemy 4.1.gif");
+		private ImageIcon enemyIcon4Right = new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/enemy 5.2.gif");
+		private ImageIcon enemyIcon4Left = new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/enemy 5.1.gif");
+		private ImageIcon platformIcon = new ImageIcon("F:/Pictures/grassyplatform1.gif");
+		private ImageIcon orangeKey= new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/orange key.gif");
+		private ImageIcon blueKey = new ImageIcon("C:/Users/Kevin/Desktop/bww/blue key.gif");
+		private ImageIcon blueDoorIcon = new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/blue door.gif");
+		private ImageIcon hub1DoorIcon =  new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/hub1 door.gif");
+		private ImageIcon redDoorIcon =  new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/red door.gif");
+		private ImageIcon redKey =  new ImageIcon("C:/Users/Kevin/Desktop/bww/red key.gif");
+		private ImageIcon greenDoorIcon =  new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/green door.gif");
+		private ImageIcon greenKey =  new ImageIcon("C:/Users/Kevin/Desktop/bww/green key.gif");
+		private ImageIcon bossDoorIcon =  new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/boss door.gif");
+		private ImageIcon boss1LeftIcon =  new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/boss1 left.gif");
+		private ImageIcon boss1RightIcon =  new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/boss1 right.gif");
+		private ImageIcon yellowDoorIcon =  new ImageIcon("C:/Users/Kevin/Documents/Bear With Wings/BEAR WITH WINGS Images/yellow door.gif");
+		private ImageIcon yellowKey =  new ImageIcon("C:/Users/Kevin/Desktop/bww/yellow key.gif");
+		private ImageIcon bearRight = new ImageIcon("C:/Users/Kevin/Desktop/bww/BEAR2 RIGHT.gif"); 
+      private ImageIcon bearLeft = new ImageIcon("C:/Users/Kevin/Desktop/bww/BEAR2 LEFT.gif");
+      private ImageIcon bearJumpUpRight = new ImageIcon("C:/Users/Kevin/Desktop/bww/BEAR2 JUMP2 RIGHT.gif"); 
+      private ImageIcon bearJumpUpLeft = new ImageIcon("C:/Users/Kevin/Desktop/bww/BEAR2 JUMP2 LEFT.gif");
+      private ImageIcon bearJumpDownRight = new ImageIcon("C:/Users/Kevin/Desktop/bww/BEAR2 JUMP1 RIGHT.gif"); 
+      private ImageIcon bearJumpDownLeft = new ImageIcon("C:/Users/Kevin/Desktop/bww/BEAR2 JUMP1 LEFT.gif"); 
       
-      private ImageIcon bearMoveOneRight = new ImageIcon("Images/BEAR2 MOVE 1 RIGHT.gif"); 
-      private ImageIcon bearMoveOneLeft = new ImageIcon("Images/BEAR2 MOVE1 LEFT.gif");
-      private ImageIcon bearMoveTwoRight = new ImageIcon("Images/BEAR2 MOVE2 RIGHT.gif"); 
-      private ImageIcon bearMoveTwoLeft = new ImageIcon("Images/BEAR2 MOVE2 LEFT.gif");
-      private ImageIcon crystal = new ImageIcon("Images/crystal6.gif");
-      private ImageIcon superCrystal = new ImageIcon("Images/crystal.gif");
-      private ImageIcon powerCrystal = new ImageIcon("Images/power crystal.gif");   
-      private ImageIcon fireBall = new ImageIcon("Images/fireball.gif");
-      private ImageIcon fireBall2 = new ImageIcon("Images/fireball 2.gif");     
+      private ImageIcon bearMoveOneRight = new ImageIcon("C:/Users/Kevin/Desktop/bww/BEAR2 MOVE 1 RIGHT.gif"); 
+      private ImageIcon bearMoveOneLeft = new ImageIcon("C:/Users/Kevin/Desktop/bww/BEAR2 MOVE1 LEFT.gif");
+      private ImageIcon bearMoveTwoRight = new ImageIcon("C:/Users/Kevin/Desktop/bww/BEAR2 MOVE2 RIGHT.gif"); 
+      private ImageIcon bearMoveTwoLeft = new ImageIcon("C:/Users/Kevin/Desktop/bww/BEAR2 MOVE2 LEFT.gif");
+      private ImageIcon crystal = new ImageIcon("C:/Users/Kevin/Desktop/bww/crystal6.gif");
+      private ImageIcon superCrystal = new ImageIcon("C:/Users/Kevin/Desktop/bww/crystal.gif");
+      private ImageIcon powerCrystal = new ImageIcon("C:/Users/Kevin/Desktop/bww/power crystal.gif");   
+      private ImageIcon fireBall = new ImageIcon("C:/Users/Kevin/Desktop/bww/fireball.gif");
+      private ImageIcon fireBall2 = new ImageIcon("C:/Users/Kevin/Desktop/bww/fireball 2.gif");     
         
 		
       private Image door;
@@ -1170,9 +1169,9 @@ public class BearWithWings extends JFrame implements Runnable{
 		public class AL extends KeyAdapter{
 			public void keyPressed(KeyEvent e){
 				int keyCode = e.getKeyCode();
-				if(keyCode == KeyEvent.VK_UP && !isFlying && (((!falling || isOverSlantedPlatform(x, y, BEAR_WIDTH, BEAR_HEIGHT)) 
+				if(keyCode == KeyEvent.VK_SPACE && !isFlying && (((!falling || isOverSlantedPlatform(x, y, BEAR_WIDTH, BEAR_HEIGHT)) 
 				&& jumpCount == 0 && !isHoldingJumpKey && !exitJump && !isFlying && !alert) 
-				|| (doubleJumpCount < doubleJump && !isHoldingJumpKey && !falling)) && !inFrontOfDoor){
+				|| (doubleJumpCount < doubleJump && !isHoldingJumpKey && !falling))){
 					doubleJumpCount++;
 					jumpCount = 0;
 					tempJumpCount = 0;
@@ -1202,7 +1201,7 @@ public class BearWithWings extends JFrame implements Runnable{
 					isPressingUp = true;
 				}
 				
-				if(keyCode == KeyEvent.VK_ENTER && !bossDead){
+				if(keyCode == KeyEvent.VK_SPACE && !bossDead){
 					alert = false;
 					paused = false;
 				}
@@ -1283,7 +1282,7 @@ public class BearWithWings extends JFrame implements Runnable{
 					setYDirection(0);
 					isPressingDown = false;
 				}
-				if(keyCode == KeyEvent.VK_UP){
+				if(keyCode == KeyEvent.VK_SPACE){
 					isHoldingJumpKey = false;
 					jumpHoldCount = 0;
 					exitJump = true;
@@ -1369,7 +1368,7 @@ public class BearWithWings extends JFrame implements Runnable{
 				deathAreaTest(g);
 			}
 			
-				if(blueDoor || door1 || redDoor || redDoor2 || redDoor3 
+				if(hub || blueDoor || door1 || redDoor || redDoor2 || redDoor3 
 				|| greenDoor || greenDoor2 || greenDoor3 || greenDoor4 || 
 				bossDoor || yellowDoor || yellowDoor2 || yellowDoor3 || yellowDoor4){
 					levelTime = 0;
@@ -1417,8 +1416,8 @@ public class BearWithWings extends JFrame implements Runnable{
 				} else if(level.equals("hub1")){
 					setBackground(new Color(0, 150, 250));
 					if(door1){
-						x = 175;
-						y = 642;
+						x = 350;
+						y = 640;
 						ysideScrollCount = -220;
 						xsideScrollCount = 0;
 						createWorld1Hub(g);
@@ -2168,8 +2167,9 @@ public class BearWithWings extends JFrame implements Runnable{
 		}
 		public void drawDoor(Graphics g){
 			for(Platform door : doorSet){
-				
-				 if(door.type.equals("blue")){
+				if(door.type.equals("hub")){
+					g.drawImage(doorClosed.getImage(), door.x, door.y, door.width, door.height, this);
+				} else if(door.type.equals("blue")){
 					g.drawImage(blueDoorIcon.getImage(), door.x, door.y, door.width, door.height, this);
 				} else if(door.type.equals("hub1")){
 					g.drawImage(hub1DoorIcon.getImage(), door.x, door.y, door.width, door.height, this);
@@ -2197,6 +2197,10 @@ public class BearWithWings extends JFrame implements Runnable{
 							blueDoor = true;
 							level = "blue";
 							lastDoor = "blueDoor";
+						} else if(doorSet.get(i).type.equals("hub")){
+							hub = true;
+							level = "hub";
+							lastDoor = "hubDoor1";
 						} else if(doorSet.get(i).type.equals("red")){
 							redDoor = true;
 							level = "red";
@@ -2257,7 +2261,6 @@ public class BearWithWings extends JFrame implements Runnable{
 			}
 		}
 		public void inFrontOfDoorTest(Graphics g){
-         inFrontOfDoor = false;
 			g.setColor(Color.BLACK);
          g.setFont(new Font("Arial", Font.BOLD, 22));
 			for(int i = 0; i < doorSet.size(); i++){
@@ -2271,8 +2274,7 @@ public class BearWithWings extends JFrame implements Runnable{
 						g.drawString("[^]", doorSet.get(i).x + 10, doorSet.get(i).y - 16);
                   g.drawString("l", doorSet.get(i).x + 21, doorSet.get(i).y - 16);
 					}
-				   inFrontOfDoor = true;
-            } 
+				}
 			}	
 		}
 		public void killEnemy(){
@@ -2380,10 +2382,11 @@ public class BearWithWings extends JFrame implements Runnable{
 				addPlatform(1250, -100, 500, 2000, "one", "platform");
 			}
 			if(doorSet.isEmpty()){
-				addPlatform(400, 636, 40, 65, "blue", "door");
-				addPlatform(550, 636, 40, 65, "red", "door");
-				addPlatform(700, 636, 40, 65, "green", "door");
-				addPlatform(850, 636, 40, 65, "yellow", "door");
+				addPlatform(250, 636, 40, 65, "hub", "door");
+				addPlatform(500, 636, 40, 65, "blue", "door");
+				addPlatform(650, 636, 40, 65, "red", "door");
+				addPlatform(800, 636, 40, 65, "green", "door");
+				addPlatform(950, 636, 40, 65, "yellow", "door");
 				addPlatform(1100, 620, 50, 80, "boss", "door");
 			}
 			
@@ -2395,16 +2398,16 @@ public class BearWithWings extends JFrame implements Runnable{
 				g.fillRect(rect.x, rect.y, rect.width, rect.height);
 			}
 			if(hasBlueKey){
-				g.drawImage(blueKey.getImage(), 405, 500 + ysideScrollCount, 25, 60, this);
+				g.drawImage(blueKey.getImage(), 505, 500 + ysideScrollCount, 25, 60, this);
 			}
 			if(hasRedKey){
-				g.drawImage(redKey.getImage(), 555, 500 + ysideScrollCount, 25, 60, this);
+				g.drawImage(redKey.getImage(), 655, 500 + ysideScrollCount, 25, 60, this);
 			}
 			if(hasGreenKey){
-				g.drawImage(greenKey.getImage(), 705, 500 + ysideScrollCount, 25, 60, this);
+				g.drawImage(greenKey.getImage(), 805, 500 + ysideScrollCount, 25, 60, this);
 			}
 			if(hasYellowKey){
-				g.drawImage(yellowKey.getImage(), 855, 500 + ysideScrollCount, 25, 60, this);
+				g.drawImage(yellowKey.getImage(), 955, 500 + ysideScrollCount, 25, 60, this);
 			}
 			drawDoor(g);
 			//doorTest(g);
@@ -2715,7 +2718,6 @@ public class BearWithWings extends JFrame implements Runnable{
             g.drawImage(powerCrystal.getImage(), fc.x, fc.y, fc.width, fc.height, this);
 
 			}
-         
 			crystalRemove();
 			drawEnemy(g);
 			flyCrystalTest();
@@ -5169,8 +5171,6 @@ public class BearWithWings extends JFrame implements Runnable{
 		}
 		
 		public void credits(Graphics g){
-         
-		   
 			g.setColor(Color.black);
 			g.fillRect(-1000, -1000, 5000, 5000);
 			if(bossDeathCount >= 14500){
@@ -5263,7 +5263,12 @@ public class BearWithWings extends JFrame implements Runnable{
 			font = new Font("Arial", Font.PLAIN, 30);
 			g.setFont(font);
 			g.setColor(new Color(180, 0, 220));
-			 if(alertMessage.equals("flyCrystal")){
+			if(alertMessage.equals("first crystal")){
+				g.drawString("You've Collected A Crystal!", 450, 300);
+				g.drawString("Collect 100 And press F To Fly", 430, 350);
+			} else if(alertMessage.equals("enemy")){
+				g.drawString("Stomp On An Enemy To Squash 'Em", 400, 300);
+			} else if(alertMessage.equals("flyCrystal")){
 				g.drawString("Boom, You Just Collected a Power Crystal!", 375, 250);
 				g.drawString("Use The Arrow Keys To Fly", 470, 300);
 				g.drawString("Also You're Invincible", 500, 350);
@@ -5297,11 +5302,19 @@ public class BearWithWings extends JFrame implements Runnable{
 			}
 			font = new Font("Arial", Font.PLAIN, 20);
 			g.setFont(font);
-			g.drawString("press enter to return to the game", 600, 450);
+			g.drawString("press space to return to the game", 600, 450);
 		}
 		
 		public void alertBoxHandler(){
-			 if(ateFlyCrystal && !alert3 && !used100Crystals){
+			if(crystalCount == 1 && !alert1){
+				alertMessage = "first crystal";
+				alert = true;
+				alert1 = true;
+			} else if(firstEnemyOnScreen && !alert2){
+				alertMessage = "enemy";
+				alert = true;
+				alert2 = true;
+			} else if(ateFlyCrystal && !alert3 && !used100Crystals){
 				alertMessage = "flyCrystal";
 				alert = true;
 				alert3 = true;
@@ -5391,13 +5404,6 @@ public class BearWithWings extends JFrame implements Runnable{
 				yellowMusic = getMusic(yellowURL);
 			} else if(level.equals("boss") && !bossTheme.isRunning() && !barrierDown && !hasEnteredBossArea){
 				bossTheme.loop(1000000);
-            bossFlashCount = 0;
-		      bossFlashTempCount = 0;
-		      bossDecideCount = 0;
-		      bossHorizontalCount = 0;
-		      bossJumpTempCount = 0;
-		      bossJumpCount = 0;
-		      
 			} else if(level.equals("boss") && bossTheme.isRunning() && hasEnteredBossArea){
 				bossTheme.stop();
 				bossTheme = getMusic(bossThemeURL);
@@ -5407,13 +5413,6 @@ public class BearWithWings extends JFrame implements Runnable{
 				bossBattle.stop();
 				bossBattle = getMusic(bossBattleURL);
 			} else if(level.equals("boss") && credits && bossDeathCount == 3000){
-            bossFlashCount = 0;
-		      bossFlashTempCount = 0;
-		      bossDecideCount = 0;
-		      bossHorizontalCount = 0;
-		      bossJumpTempCount = 0;
-		      bossJumpCount = 0;
-		      
 				creditsSong.start();
 			} else if(isFlying && !level.equals("boss") && !flyMusic.isRunning()){
 				flyMusic.loop(10000);
@@ -5433,15 +5432,6 @@ public class BearWithWings extends JFrame implements Runnable{
 		
 		public void paintComponent(Graphics g){
 			if(hasGameStarted){
-            
-            if(level.equals("blue")){
-               font = new Font("Arial", Font.PLAIN, 20);
-				   g.setFont(font);
-               g.setColor(Color.BLACK);
-               g.drawString("Hey Look a Crystal!", 1475 - xsideScrollCount, 150 + ysideScrollCount);
-               g.drawString("Collect 100 and Press 'F' to Fly!", 1420 - xsideScrollCount, 180 + ysideScrollCount);
-               g.drawString("Stomp On An Enemy To Squash 'Em", 2500 - xsideScrollCount, 150 + ysideScrollCount);            
-            }
             enemy1AnimationCount++;
             if(enemy1AnimationCount <= 200){
                enemyAnimation1 = true;
@@ -5700,7 +5690,7 @@ public class BearWithWings extends JFrame implements Runnable{
 						}
 					}
 					} catch(Exception e){
-						
+						System.out.println("Shut your whore mouth");
 					}
 				
 				if(hasCollectedCrystals()){
@@ -5753,8 +5743,6 @@ public class BearWithWings extends JFrame implements Runnable{
 				g.drawString("Start Game", startButton.x + 43, startButton.y + 38);
 				
 			}
-         
-        
 			alertBoxHandler();
 			if(alert){
 				paused = true;
@@ -5764,7 +5752,7 @@ public class BearWithWings extends JFrame implements Runnable{
 			if(credits){
 				credits(g);
 			}
-         g.setColor(Color.WHITE);         
+        // g.drawString("(" + (x + xsideScrollCount) + ", " + (y - ysideScrollCount) +  ")", 100, 100);
 			repaint();
 		}
 		
